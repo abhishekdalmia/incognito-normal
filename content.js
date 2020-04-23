@@ -1,10 +1,7 @@
-chrome.runtime.onMessage.addListener(function(request, sender, response) {
-
-    // request is an object with propert: [urls, incognito]
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+    // 'request': object with properties: [urls, mode]
     chrome.runtime.sendMessage({
-        msg: request
+        urls: request.urls,
+        mode: request.mode
     });
-
-    response({msg: request});
-
 });

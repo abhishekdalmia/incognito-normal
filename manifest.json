@@ -1,6 +1,7 @@
 {
     "name": "norinc",
     "version": "1.0",
+    "description": "Duplicate current window into another normal or incognito window.",
     "manifest_version": 2,
     "content_scripts": [
         {
