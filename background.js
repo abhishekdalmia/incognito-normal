@@ -1,3 +1,4 @@
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {
-    chrome.windows.create({ url: request.urls});
+    // open the passed urls in normal window if arg: incognito not passed
+    chrome.windows.create({url: request.urls, incognito: request.incognito||false});
 });

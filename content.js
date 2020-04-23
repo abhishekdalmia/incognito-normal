@@ -1,11 +1,10 @@
 chrome.runtime.onMessage.addListener(function(request, sender, response) {
 
-    // request is an array containing all the urls of the current window
-    let sending = request;
+    // request is an object with propert: [urls, incognito]
     chrome.runtime.sendMessage({
-        urls: sending
+        msg: request
     });
 
-    response({ msg: request });
+    response({msg: request});
 
 });
